@@ -109,7 +109,7 @@ function removeDuplicates(snippets) {
 }
 
 // Function to create chunks and save separate files
-function createChunkedFiles(snippets, chunkSize = 500) {
+function createChunkedFiles(snippets, chunkSize = 1000) {
     const chunks = [];
     for (let i = 0; i < snippets.length; i += chunkSize) {
         chunks.push(snippets.slice(i, i + chunkSize));
@@ -188,8 +188,8 @@ function generateSolutionsJSON() {
     console.log(`\nProcessing completed! Final unique snippets: ${uniqueSnippets.length}`);
     console.log('Creating chunked files...');
     
-    // Create chunked files (500 items each)
-    const outputFiles = createChunkedFiles(uniqueSnippets, 500);
+    // Create chunked files (1000 items each)
+    const outputFiles = createChunkedFiles(uniqueSnippets, 1000);
     
     // Also create the original single file
     const singleFile = 'leetcode_solutions.json';
