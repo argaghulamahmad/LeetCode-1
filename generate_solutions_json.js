@@ -71,12 +71,69 @@ function processPythonFile(filePath) {
             title: title,
             language: "python",
             notes: "",
-            practiceCount: 0
+            practiceCount: 0,
+            filePath: filePath // Add file path for debugging
         };
     } catch (error) {
         console.error(`Error processing file ${filePath}:`, error.message);
         return null;
     }
+}
+
+// Function to remove duplicates based on title, keeping the best version
+function removeDuplicates(snippets) {
+    const titleMap = new Map();
+    
+    snippets.forEach(snippet => {
+        const title = snippet.title;
+        
+        if (!titleMap.has(title)) {
+            titleMap.set(title, snippet);
+        } else {
+            // Keep the version with more code (likely more complete)
+            const existing = titleMap.get(title);
+            if (snippet.code.length > existing.code.length) {
+                console.log(`Replacing duplicate: ${title} (${existing.code.length} chars -> ${snippet.code.length} chars)`);
+                titleMap.set(title, snippet);
+            } else {
+                console.log(`Skipping duplicate: ${title} (keeping ${existing.code.length} chars over ${snippet.code.length} chars)`);
+            }
+        }
+    });
+    
+    // Convert back to array and remove filePath
+    return Array.from(titleMap.values()).map(snippet => {
+        const { filePath, ...cleanSnippet } = snippet;
+        return cleanSnippet;
+    });
+}
+
+// Function to create chunks and save separate files
+function createChunkedFiles(snippets, chunkSize = 500) {
+    const chunks = [];
+    for (let i = 0; i < snippets.length; i += chunkSize) {
+        chunks.push(snippets.slice(i, i + chunkSize));
+    }
+    
+    const outputFiles = [];
+    
+    chunks.forEach((chunk, index) => {
+        const startIndex = index * chunkSize + 1;
+        const endIndex = Math.min(startIndex + chunkSize - 1, snippets.length);
+        
+        const fileName = `leetCode - ${startIndex} sampe ${endIndex}.json`;
+        
+        const result = {
+            snippets: chunk
+        };
+        
+        fs.writeFileSync(fileName, JSON.stringify(result, null, 2));
+        outputFiles.push(fileName);
+        
+        console.log(`Created: ${fileName} (${chunk.length} snippets)`);
+    });
+    
+    return outputFiles;
 }
 
 // Main function
@@ -96,13 +153,13 @@ function generateSolutionsJSON() {
     console.log(`Found ${pythonFiles.length} Python files`);
     
     // Process each file
-    const snippets = [];
+    const allSnippets = [];
     let processedCount = 0;
     
     for (const filePath of pythonFiles) {
         const snippet = processPythonFile(filePath);
         if (snippet) {
-            snippets.push(snippet);
+            allSnippets.push(snippet);
             processedCount++;
         }
         
@@ -112,25 +169,49 @@ function generateSolutionsJSON() {
         }
     }
     
+    console.log(`\nTotal snippets before deduplication: ${allSnippets.length}`);
+    
+    // Remove duplicates based on title
+    console.log('Removing duplicates...');
+    const uniqueSnippets = removeDuplicates(allSnippets);
+    
+    console.log(`Total snippets after deduplication: ${uniqueSnippets.length}`);
+    console.log(`Removed ${allSnippets.length - uniqueSnippets.length} duplicates`);
+    
     // Sort snippets by title (problem number)
-    snippets.sort((a, b) => {
+    uniqueSnippets.sort((a, b) => {
         const aNum = parseInt(a.title.match(/^\d+/)?.[0] || '0');
         const bNum = parseInt(b.title.match(/^\d+/)?.[0] || '0');
         return aNum - bNum;
     });
     
-    // Create the final JSON structure
+    console.log(`\nProcessing completed! Final unique snippets: ${uniqueSnippets.length}`);
+    console.log('Creating chunked files...');
+    
+    // Create chunked files (500 items each)
+    const outputFiles = createChunkedFiles(uniqueSnippets, 500);
+    
+    // Also create the original single file
+    const singleFile = 'leetcode_solutions.json';
     const result = {
-        snippets: snippets
+        snippets: uniqueSnippets
     };
+    fs.writeFileSync(singleFile, JSON.stringify(result, null, 2));
     
-    // Write to file
-    const outputFile = 'leetcode_solutions.json';
-    fs.writeFileSync(outputFile, JSON.stringify(result, null, 2));
+    console.log(`\nAll files created successfully!`);
+    console.log(`Total files created: ${outputFiles.length + 1}`);
+    console.log(`Chunked files: ${outputFiles.length}`);
+    console.log(`Single file: ${singleFile}`);
     
-    console.log(`\nCompleted! Generated ${snippets.length} snippets`);
-    console.log(`Output saved to: ${outputFile}`);
-    console.log(`File size: ${(fs.statSync(outputFile).size / 1024 / 1024).toFixed(2)} MB`);
+    // Show file sizes
+    console.log('\nFile sizes:');
+    outputFiles.forEach(file => {
+        const size = (fs.statSync(file).size / 1024 / 1024).toFixed(2);
+        console.log(`${file}: ${size} MB`);
+    });
+    
+    const singleFileSize = (fs.statSync(singleFile).size / 1024 / 1024).toFixed(2);
+    console.log(`${singleFile}: ${singleFileSize} MB`);
 }
 
 // Run the script
