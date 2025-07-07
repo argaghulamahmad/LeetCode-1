@@ -121,7 +121,7 @@ function createChunkedFiles(snippets, chunkSize = 500) {
         const startIndex = index * chunkSize + 1;
         const endIndex = Math.min(startIndex + chunkSize - 1, snippets.length);
         
-        const fileName = `leetCode - ${startIndex} sampe ${endIndex}.json`;
+        const fileName = `leetCode - ${startIndex} to ${endIndex}.json`;
         
         const result = {
             snippets: chunk
