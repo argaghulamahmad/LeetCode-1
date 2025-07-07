@@ -1,0 +1,21 @@
+{
+  "name": "leetcode-solutions-generator",
+  "version": "1.0.0",
+  "description": "Generate JSON file from LeetCode Python solutions",
+  "main": "generate_solutions_json.js",
+  "scripts": {
+    "start": "node generate_solutions_json.js",
+    "generate": "node generate_solutions_json.js"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "keywords": [
+    "leetcode",
+    "solutions",
+    "json",
+    "generator"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
