@@ -1,0 +1,192 @@
+# Data Structures and Algorithms Course - Analysis Report
+
+## Summary
+- Total files: 190
+- Solution files: 186
+- Problems found: 63
+- Problems missing: 87
+- Coverage: 63/150 (42.0%)
+
+## Language Distribution
+- .cpp: 63 files
+- .java: 63 files
+- .py: 60 files
+
+## Category Coverage
+- Arrays and Strings: 12/25 (48.0%)
+- Two Pointers: 4/5 (80.0%)
+- Sliding Window: 3/4 (75.0%)
+- Matrix: 3/5 (60.0%)
+- Hashmap: 2/8 (25.0%)
+- Intervals: 2/4 (50.0%)
+- Stack: 0/5 (0.0%)
+- Linked List: 4/11 (36.4%)
+- Binary Tree General: 4/14 (28.6%)
+- Binary Tree BFS: 1/4 (25.0%)
+- Binary Search Tree: 1/3 (33.3%)
+- Graph General: 2/6 (33.3%)
+- Graph BFS: 1/3 (33.3%)
+- Trie: 0/3 (0.0%)
+- Backtracking: 4/7 (57.1%)
+- Divide & Conquer: 3/4 (75.0%)
+- Kadane's Algorithm: 2/2 (100.0%)
+- Binary Search: 5/7 (71.4%)
+- Heap: 1/4 (25.0%)
+- Bit Manipulation: 2/6 (33.3%)
+- Math: 1/6 (16.7%)
+- 1D DP: 2/5 (40.0%)
+- Multidimensional DP: 4/9 (44.4%)
+
+## Found Problems
+- ✓ 3. Longest Substring Without Repeating Characters
+- ✓ 4. Median of Two Sorted Arrays
+- ✓ 5. Longest Palindromic Substring
+- ✓ 11. Container With Most Water
+- ✓ 14. Longest Common Prefix
+- ✓ 15. 3Sum
+- ✓ 17. Letter Combinations of a Phone Number
+- ✓ 23. Merge k Sorted Lists
+- ✓ 25. Reverse Nodes in k-Group
+- ✓ 27. Remove Element
+- ✓ 33. Search in Rotated Sorted Array
+- ✓ 34. Find First and Last Position of Element in Sorted Array
+- ✓ 42. Trapping Rain Water
+- ✓ 45. Jump Game II
+- ✓ 46. Permutations
+- ✓ 48. Rotate Image
+- ✓ 49. Group Anagrams
+- ✓ 50. Pow(x, n)
+- ✓ 52. N-Queens II
+- ✓ 53. Maximum Subarray
+- ✓ 54. Spiral Matrix
+- ✓ 57. Insert Interval
+- ✓ 58. Length of Last Word
+- ✓ 63. Unique Paths II
+- ✓ 64. Minimum Path Sum
+- ✓ 72. Edit Distance
+- ✓ 76. Minimum Window Substring
+- ✓ 79. Word Search
+- ✓ 86. Partition List
+- ✓ 92. Reverse Linked List II
+- ✓ 104. Maximum Depth of Binary Tree
+- ✓ 105. Construct Binary Tree from Preorder and Inorder Traversal
+- ✓ 122. Best Time to Buy and Sell Stock II
+- ✓ 129. Sum Root to Leaf Numbers
+- ✓ 130. Surrounded Regions
+- ✓ 134. Gas Station
+- ✓ 135. Candy
+- ✓ 136. Single Number
+- ✓ 141. Linked List Cycle
+- ✓ 148. Sort List
+- ✓ 151. Reverse Words in a String
+- ✓ 153. Find Minimum in Rotated Sorted Array
+- ✓ 162. Find Peak Element
+- ✓ 167. Two Sum II - Input Array Is Sorted
+- ✓ 169. Majority Element
+- ✓ 189. Rotate Array
+- ✓ 191. Number of 1 Bits
+- ✓ 198. House Robber
+- ✓ 200. Number of Islands
+- ✓ 209. Minimum Size Subarray Sum
+- ✓ 219. Contains Duplicate II
+- ✓ 226. Invert Binary Tree
+- ✓ 228. Summary Ranges
+- ✓ 289. Game of Life
+- ✓ 322. Coin Change
+- ✓ 380. Insert Delete GetRandom O(1)
+- ✓ 392. Is Subsequence
+- ✓ 427. Construct Quad Tree
+- ✓ 433. Minimum Genetic Mutation
+- ✓ 502. IPO
+- ✓ 530. Minimum Absolute Difference in BST
+- ✓ 637. Average of Levels in Binary Tree
+- ✓ 918. Maximum Sum Circular Subarray
+
+## Missing Problems
+- ✗ 1. Two Sum
+- ✗ 2. Add Two Numbers
+- ✗ 6. ZigZag Conversion
+- ✗ 9. Palindrome Number
+- ✗ 12. Integer to Roman
+- ✗ 13. Roman to Integer
+- ✗ 19. Remove Nth Node From End of List
+- ✗ 20. Valid Parentheses
+- ✗ 21. Merge Two Sorted Lists
+- ✗ 22. Generate Parentheses
+- ✗ 26. Remove Duplicates from Sorted Array
+- ✗ 28. Find the Index of the First Occurrence in a String
+- ✗ 30. Substring with Concatenation of All Words
+- ✗ 35. Search Insert Position
+- ✗ 36. Valid Sudoku
+- ✗ 39. Combination Sum
+- ✗ 55. Jump Game
+- ✗ 56. Merge Intervals
+- ✗ 61. Rotate List
+- ✗ 66. Plus One
+- ✗ 67. Add Binary
+- ✗ 68. Text Justification
+- ✗ 69. Sqrt(x)
+- ✗ 70. Climbing Stairs
+- ✗ 71. Simplify Path
+- ✗ 73. Set Matrix Zeroes
+- ✗ 74. Search a 2D Matrix
+- ✗ 77. Combinations
+- ✗ 80. Remove Duplicates from Sorted Array II
+- ✗ 82. Remove Duplicates from Sorted List II
+- ✗ 88. Merge Sorted Array
+- ✗ 97. Interleaving String
+- ✗ 98. Validate Binary Search Tree
+- ✗ 100. Same Tree
+- ✗ 101. Symmetric Tree
+- ✗ 102. Binary Tree Level Order Traversal
+- ✗ 103. Binary Tree Zigzag Level Order Traversal
+- ✗ 106. Construct Binary Tree from Inorder and Postorder Traversal
+- ✗ 108. Convert Sorted Array to Binary Search Tree
+- ✗ 112. Path Sum
+- ✗ 114. Flatten Binary Tree to Linked List
+- ✗ 117. Populating Next Right Pointers in Each Node II
+- ✗ 120. Triangle
+- ✗ 121. Best Time to Buy and Sell Stock
+- ✗ 123. Best Time to Buy and Sell Stock III
+- ✗ 124. Binary Tree Maximum Path Sum
+- ✗ 125. Valid Palindrome
+- ✗ 127. Word Ladder
+- ✗ 128. Longest Consecutive Sequence
+- ✗ 133. Clone Graph
+- ✗ 137. Single Number II
+- ✗ 138. Copy List with Random Pointer
+- ✗ 139. Word Break
+- ✗ 146. LRU Cache
+- ✗ 149. Max Points on a Line
+- ✗ 150. Evaluate Reverse Polish Notation
+- ✗ 155. Min Stack
+- ✗ 172. Factorial Trailing Zeroes
+- ✗ 173. Binary Search Tree Iterator
+- ✗ 188. Best Time to Buy and Sell Stock IV
+- ✗ 190. Reverse Bits
+- ✗ 199. Binary Tree Right Side View
+- ✗ 201. Bitwise AND of Numbers Range
+- ✗ 202. Happy Number
+- ✗ 205. Isomorphic Strings
+- ✗ 207. Course Schedule
+- ✗ 208. Implement Trie (Prefix Tree)
+- ✗ 210. Course Schedule II
+- ✗ 211. Design Add and Search Words Data Structure
+- ✗ 212. Word Search II
+- ✗ 215. Kth Largest Element in an Array
+- ✗ 221. Maximal Square
+- ✗ 222. Count Complete Tree Nodes
+- ✗ 224. Basic Calculator
+- ✗ 230. Kth Smallest Element in a BST
+- ✗ 236. Lowest Common Ancestor of a Binary Tree
+- ✗ 238. Product of Array Except Self
+- ✗ 242. Valid Anagram
+- ✗ 274. H-Index
+- ✗ 290. Word Pattern
+- ✗ 295. Find Median from Data Stream
+- ✗ 300. Longest Increasing Subsequence
+- ✗ 373. Find K Pairs with Smallest Sums
+- ✗ 383. Ransom Note
+- ✗ 399. Evaluate Division
+- ✗ 452. Minimum Number of Arrows to Burst Balloons
+- ✗ 909. Snakes and Ladders
